@@ -1,0 +1,560 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Indigent Application Form">
+	<title>Indigent Application Form</title>
+	<link rel="stylesheet" href="styles1.css">
+	
+	
+</head>
+
+<body>
+<div class="container">
+
+<header>
+    <div class="logo-container">
+        <img src="municipal-logo.jpeg" alt="Municipal Logo" class="logo">
+        
+    
+    <h3>City of Matlosana</h3>
+    <h4>Indigent Management System</h4>
+    </div>
+</header>
+<!-- Spacer -->
+     <div class="spacer">
+     </div>
+     
+        <!-- Section A -->
+        <section>
+            <h4>Section A - Annexure 'A' 1</h4>
+            <h3>Account Information</h3>
+            <form id="account-info">
+                <div class="form-group">
+                    <label class="label" for="account-name">Account Name:</label>
+                    <input class="input" type="text" id="account-name" required>
+                </div>
+                <div class="form-group">
+                    <label class="label" for="account-number">Account Number:</label>
+                    <input class="input" type="number" id="account-number" required>
+                </div>
+                <div class="form-group">
+                    <label class="label" for="erf-number">Erf Number:</label>
+                    <input class="input" type="number" id="erf-number" required>
+                </div>
+                <div class="form-group">
+                    <label class="label" for="meter-number">Council/Eskom/Prepaid Meter Number:</label>
+                    <input class="input" type="text" id="meter-number" required>
+                </div>
+                <div class="form-group">
+                    <label class="label" for="application-date">Date of Application:</label>
+                    <input class="input" type="date" id="application-date" required>
+                </div>
+                <div class="form-group">
+                    <label class="label" for="physical-address">Physical Address:</label>
+                    <input class="input" type="text" id="physical-address" required>
+                </div>
+                
+                <div class="form-group">
+                <label class="label" for="ward-number">Ward Number:</label>
+                <select id="ward-number" name="ward-number" class="input">
+                <option value="">Select Ward Number</option>
+                </select>
+                </div>
+              
+                <style>
+                #ward-number {
+                width: 300px; /* Set the width of the select element */
+                height: 40px; /* Set the height of the select element */
+                padding: 10px; /* Add padding to the select element */
+                border: 1px solid #ccc; /* Add a border to the select element */
+                border-radius: 5px; /* Add a border radius to the select element */
+                box-sizing: border-box; /* Ensure the padding is included in the width */
+                font-size: 16px; /* Set the font size of the select element */
+                }
+                
+                #ward-number:focus {
+                outline: none; /* Remove the default outline on focus */
+                border-color: #aaa; /* Change the border color on focus */
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a box shadow on focus */
+                }
+                
+                #ward-number option {
+                padding: 10px; /* Add padding to the options */
+                border-bottom: 1px solid #ccc; /* Add a border to the bottom of each option */
+                }
+                
+                #ward-number option:hover {
+                background-color: #f9f9f9; /* Change the background color on hover */
+                }
+                </style>
+                
+                <script>
+                const wardSelect = document.getElementById('ward-number');
+                for (let i = 1; i <= 40; i++) {
+                const option = document.createElement('option');
+                option.value = i;
+                option.text = `Ward ${i}`;
+                wardSelect.appendChild(option);
+                }
+                </script>
+            </section>
+            <!-- Spacer -->
+            <div class="spacer"></div>
+          
+        <!-- Section B -->
+        <section>
+        <h4>Section B - Annexure 'A' 2</h4>
+        <h3>Personal Information</h3>
+        <form id="personal-info">
+        <div class="form-group">
+        <label class="label" for="applicant-name">Applicant Name(s):</label>
+        <input class="input" type="text" id="applicant-name" required>
+        </div>
+        <div class="form-group">
+        <label class="label" for="applicant-surname">Applicant Surname:</label>
+        <input class="input" type="text" id="applicant-surname" required>
+        </div>
+        <div class="form-group">
+        <label class="label" for="identity-number">Applicant Identity No:</label>
+        <input class="input" type="number" id="identity-number" required>
+        </div>
+        </div>
+        </form>
+        </section>
+        <!-- Spacer -->
+        <div class="spacer"></div>
+     <!-- Section B 1 -->
+     <section>
+     <h4>Section B 1</h4>
+     <h3>Indigent Subsidy Criterion</h3>
+     <form id="indigent-subsidy-criterion">
+     <div class="select-container">
+     <label for="marital-status" class="label">Marital Status:</label>
+     <select id="marital-status" name="marital-status" class="select">
+     
+     <option value="">Select</option>
+     <option value="Single">Single</option>
+     <option value="Married">Married</option>
+     <option value="Divorced">Divorced</option>
+     <option value="Widowed">Widowed</option>
+     </select>
+     </div>
+     <div class="select-container">
+     <label for="employment-status" class="label">Employment Status:</label>
+     <select id="employment-status" name="employment-status" class="select">
+     <option value="">Select</option>
+     <option value="Employed">Employed</option>
+     <option value="Unemployed">Unemployed</option>
+     <option value="Self-Employed">Self-Employed</option>
+     <option value="Retired">Retired</option>
+     </select>
+     </div>
+     
+     <!--spouse-details-->
+     <div id="spouse-details" style="display: none;">
+     <h3>Spouse Details:</h3>
+     <div class="form-group">
+     <label for="spouse-names" class="label">Spouse Names:</label>
+     <input type="text" id="spouse-names" name="spouse-names" class="input">
+     </div>
+     <div class="form-group">
+     <label for="spouse-surname" class="label">Spouse Surname:</label>
+     <input type="text" id="spouse-surname" name="spouse-surname" class="input">
+     </div>
+     <div class="form-group">
+     <label for="spouse-id-number" class="label">Spouse Identity Number:</label>
+     <input type="text" id="spouse-id-number" name="spouse-id-number" class="input">
+     </div>
+     <div class="form-group">
+     <label for="spouse-tax-reference-number" class="label">Spouse Tax Reference Number:</label>
+     <input type="text" id="spouse-tax-reference-number" name="spouse-tax-reference-number" class="input">
+     </div>
+     <div class="form-group">
+     <label for="spouse-income" class="label">Spouse Income (if employed):</label>
+     <input type="number" id="spouse-income" name="spouse-income" class="input">
+     </div>
+     <div class="form-group">
+     <label class="label" for="income">Applicant Income:</label>
+     <input class="input" type="number" id="income" required>
+     </div>
+     </form>
+     </section>
+     
+     <style>
+     .marital-status, .employment-status {
+     display: flex;
+     flex-direction: column;
+     margin-bottom: 20px;
+     }
+     
+     .marital-status label, .employment-status label {
+     font-weight: bold;
+     margin-bottom: 10px;
+     }
+     
+     .marital-status select, .employment-status select {
+     width: 300px;
+     height: 40px;
+     padding: 10px;
+     border: 1px solid #ccc;
+     border-radius: 5px;
+     box-sizing: border-box;
+     }
+     
+     .marital-status select:focus, .employment-status select:focus {
+     outline: none;
+     border-color: #aaa;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+     }
+     
+     .marital-status select option, .employment-status select option {
+     padding: 10px;
+     border-bottom: 1px solid #ccc;
+     }
+     
+     .marital-status select option:hover, .employment-status select option:hover {
+     background-color: #f9f9f9;
+     }
+     
+     #spouse-details {
+     margin-top: 20px;
+     padding: 20px;
+     border: 1px solid #ccc;
+     border-radius: 10px;
+     background-color: #f9f9f9;
+     display: none;
+     text-align: center;
+     }
+     
+     #spouse-details .form-group {
+     margin-bottom: 20px;
+     display: inline-block;
+     text-align: left;
+     }
+     
+     #spouse-details label {
+     width: 300px;
+     font-weight: bold;
+     margin-right: 20px;
+     text-align: left;
+     }
+     
+     #spouse-details input[type="text"], #spouse-details input[type="number"] {
+     width: 300px;
+     height: 40px;
+     padding: 10px;
+     border: 1px solid #ccc;
+     border-radius: 5px;
+     box-sizing: border-box;
+     }
+     
+     #spouse-details input[type="text"]:focus, #spouse-details input[type="number"]:focus {
+     outline: none;
+     border-color: #aaa;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+     }
+     /* ... */
+     </style>
+  
+        <script>
+        document.getElementById('marital-status').addEventListener('change', (e) => {
+        if (e.target.value === 'Married') {
+        document.getElementById('spouse-details').style.display = 'block';
+        } else {
+        document.getElementById('spouse-details').style.display = 'none';
+        }
+        });
+        
+        document.getElementById('personal-info-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const maritalStatus = document.getElementById('marital-status').value;
+        const employmentStatus = document.getElementById('employment-status').value;
+        const spouseNames = document.getElementById('spouse-names').value;
+        const spouseSurname = document.getElementById('spouse-surname').value;
+        const spouseIdNumber = document.getElementById('spouse-id-number').value;
+        const spouseTaxReferenceNumber = document.getElementById('spouse-tax-reference-number').value;
+        const spouseIncome = document.getElementById('spouse-income').value;
+        console.log(`Marital Status: ${maritalStatus}, Employment Status: ${employmentStatus}, Spouse Names: ${spouseNames}, Spouse Surname: ${spouseSurname}, Spouse ID Number: ${spouseIdNumber}, Spouse Tax Reference Number: ${spouseTaxReferenceNumber}, Spouse Income: ${spouseIncome}`);
+        });
+       
+        </script>
+     <!-- Spacer -->
+     <div class="spacer"></div>
+<!-- Section C -->
+<section>
+<h4>Section C</h4>
+<p>Person(s) / Business residing with the applicant</p>
+<form id="section-c">
+    <div class="input-container">
+    <label for="number-of-dependents" class="label">Number of Dependents:</label>
+    <input type="number" id="number-of-dependents" name="number-of-dependents" class="input-field">
+    <div id="dependent-info"></div>
+    </div>
+    
+    <div class="input-container">
+    <label for="number-of-businesses" class="label">Number of Businesses:</label>
+    <input type="number" id="number-of-businesses" name="number-of-businesses" class="input-field">
+    <div id="business-info"></div>
+    </div>
+    <div id="business-details" style="display: none;"></div>
+    <!-- Additional form fields -->
+    <div class="form-group">
+    <label class="label" for="small-input-1">Business contact:</label>
+    <input type="text" class="small-input" id="small-input-1" pattern="[0-9]+" title="Please enter a valid business contact number (numbers only)">
+    <div id="error-message" style="display: none;">Error: Please enter a valid business contact number (numbers only)</div>
+    </div>
+    <script>
+   const inputField = document.getElementById('small-input-1');
+   const errorMessage = document.getElementById('error-message');
+   
+   inputField.addEventListener('input', () => {
+   if (inputField.value.length > 0 && !inputField.value.match(/[0-9]+/)) {
+   errorMessage.style.display = 'block';
+   } else {
+   errorMessage.style.display = 'none';
+   }
+   });
+    </script>
+    <div class="form-group">
+        <label class="label" for="small-input-2">Business email:</label>
+        <input type="email" class="small-input" id="small-input-2">
+    </div>
+      
+</form>
+</section>
+<style>
+.input-container {
+    margin-bottom: 20px;
+}
+
+.label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.input-field {
+    width: 300px;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: #aaa;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#dependent-info, #business-info {
+    margin-top: 20px;
+}
+
+.dependent-container, .business-container {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.dependent-container label, .business-container label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.dependent-container input, .business-container input {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+</style>
+<script>
+const dependentInput = document.getElementById('number-of-dependents');
+const businessInput = document.getElementById('number-of-businesses');
+const dependentInfo = document.getElementById('dependent-info');
+const businessInfo = document.getElementById('business-info');
+
+dependentInput.addEventListener('input', (e) => {
+    const numDependents = e.target.value;
+    dependentInfo.innerHTML = '';
+    for (let i = 0; i < numDependents; i++) {
+        const dependentContainer = document.createElement('div');
+        dependentContainer.classList.add('dependent-container');
+        dependentContainer.innerHTML = `
+            <h3>Dependent Details</h3>
+            <label>Dependent Name:</label>
+            <input type="text">
+            <label>Dependent Surname:</label>
+            <input type="text">
+            <label>Dependent Date of Birth:</label>
+            <input type="date">
+            <label>Dependent Gender:</label>
+            <select>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+            <label>Dependent Identity Number:</label>
+            <input type="text">
+            <label>Dependent Tax Reference Number:</label>
+            <input type="text">
+        `;
+        dependentInfo.appendChild(dependentContainer);
+    }
+});
+
+businessInput.addEventListener('input', (e) => {
+    const numBusinesses = e.target.value;
+    businessInfo.innerHTML = '';
+    for (let i = 0; i < numBusinesses; i++) {
+        const businessContainer = document.createElement('div');
+        businessContainer.classList.add('business-container');
+        businessContainer.innerHTML = `
+            <h3>Business Owner Details</h3>
+            <label>Business Owner Name:</label>
+            <input type="text">
+            <label>Business Owner Surname:</label>
+            <input type="text">
+            <label>Business Owner Date of Birth:</label>
+            <input type="date">
+            <label>Business Owner Identity Number/Permit:</label>
+            <input type="text">
+            <label>Business Permit Number:</label>
+            <input type="text">
+            <label>Business Owner Tax Reference Number:</label>
+            <input type="text">
+            <label>Number of Dependents:</label>
+            <input type="number">
+        `;
+        businessInfo.appendChild(businessContainer);
+    }
+});
+</script>
+<!-- Spacer -->
+     <div class="spacer"></div>
+
+<!-- Section D -->
+<section>
+<h4>Section D</h4>
+<h3>Financial Information</h3>
+<form id="section-d">
+  <div class="form-container">
+    <div class="form-group">
+      <label class="label">Employment Verification:</label>
+      <button class="button" id="verify-employment-btn">Verify Employment</button>
+    </div>
+    <div id="employment-verification-results" style="display: none;">
+      <div class="form-group">
+        <label class="label">Employment Status:</label>
+        <input class="input" type="text" id="employment-status-result" readonly/>
+      </div>
+      <div class="form-group">
+        <label class="label">Gross Income:</label>
+        <input class="input" type="number" id="gross-income-result" readonly/>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="label">Tax Reference Certificate:</label>
+      <input class="input" type="file" id="tax-referencecertificate" required/>
+    </div>
+    <div class="form-group">
+      <label class="label">Proof of Residence:</label>
+      <input class="input" type="file" id="proof-of-residence" required/>
+    </div>
+    <div class="form-group">
+      <label class="label">ID Document:</label>
+      <input class="input" type="file" id="id-document" required/>
+    </div>
+    <div class="form-group">
+      <label class="label">Other Income (if applicable):</label>
+      <input class="input" type="number" id="other-income"/>
+    </div>
+    <div class="form-group">
+      <label class="label">Other Expenses (if applicable):</label>
+      <input class="input" type="number" id="other-expenses"/>
+    </div>
+  </div>
+</form>
+</section>
+
+<!-- Spacer -->
+     <div class="spacer"></div>
+
+<!-- Section E -->
+<section>
+<h4>Section E - Annexure 'A' 4</h4>
+<h3>Checklist</h3>
+<p>For office use only</p>
+<div class="checklist-container">
+  <div class="checklist">
+    <div class="checklist-item">
+      <div class="checklist-label">Account Information:</div>
+      <div class="checklist-checkbox">
+        <input type="checkbox" id="account-info-check" />
+        <label for="account-info-check">Completed</label>
+      </div>
+      <div class="checklist-comments">
+        <textarea id="account-info-comments" placeholder="Comments"></textarea>
+      </div>
+    </div>
+    <div class="checklist-item">
+      <div class="checklist-label">Personal Information:</div>
+      <div class="checklist-checkbox">
+        <input type="checkbox" id="personal-info-check" />
+        <label for="personal-info-check">Completed</label>
+      </div>
+      <div class="checklist-comments">
+        <textarea id="personal-info-comments" placeholder="Comments"></textarea>
+      </div>
+    </div>
+    <!-- Repeat for each section -->
+    <div class="checklist-item">
+      <div class="checklist-label">Employment Verification:</div>
+      <div class="checklist-checkbox">
+        <input type="checkbox" id="employment-verification-check" />
+        <label for="employment-verification-check">Completed</label>
+      </div>
+      <div class="checklist-comments">
+        <textarea id="employment-verification-comments" placeholder="Comments"></textarea>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<!-- Spacer -->
+     <div class="spacer"></div>
+<!-- Section F: Terms and Conditions -->
+<section id="terms-conditions">
+  <h4>Section F: Terms and Conditions</h4>
+  <p>Please read the Terms and Conditions carefully before submitting your application.</p>
+  <a href="terms-conditions.pdf" target="_blank">View Terms and Conditions (PDF)</a>
+  <div class="terms-conditions-content">
+    <!-- Insert Terms and Conditions content here -->
+  </div>
+</section>
+
+</main>
+
+<button class="button" id="submit-btn">Submit</button>
+</div>
+<footer>
+	<p class="copyright">&copy; 2024 City of Matlosana | City on the move | EFD System</p>
+</footer>
+
+<script src="script1.js"></script>
+<script src="sectionc.js"></script>
+
+</body>
+</html>
+
+
+
+
